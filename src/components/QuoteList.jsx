@@ -13,7 +13,8 @@ class QuoteList extends React.Component {
   }
 
   componentDidMount() {
-      fetch('http://foaas.com/flying/Someone', {
+    const endpoints = ['flying', 'no', 'because', 'asshole', 'bag', 'bye', 'bucket', 'cup', 'diabetes', 'everything', 'family', 'fascinating', 'ftfy', 'fyyff', 'give', 'jinglebells', 'programmer']
+      fetch(`http://foaas.com/${endpoints[[Math.floor(Math.random() * endpoints.length)]]}/Someone`, {
         headers: {
           Accept: 'application/json'
         }
@@ -48,7 +49,7 @@ class QuoteList extends React.Component {
      } else {
        return (
          <ul>
-          <p> {this.state.quote} </p>
+          <h1> {this.state.quote} </h1>
          </ul>
        );
      }

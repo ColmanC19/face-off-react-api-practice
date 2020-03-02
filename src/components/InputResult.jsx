@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Quote() {
+function InputResult() {
   return (
     <div>
 
@@ -9,4 +9,4 @@ function Quote() {
   );
 }
 
-export default Quote;
+export default InputResult;
