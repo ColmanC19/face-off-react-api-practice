@@ -1,12 +1,12 @@
 import React from 'react';
-import ImageList from './components/ImageList'
-import QuoteList from './components/QuoteList'
+import Image from './components/Image'
+import Quote from './components/Quote'
 import Input from './components/Input'
 function App() {
   return (
     <div>
-      <ImageList />
-      <QuoteList />
+      <Image />
+      <Quote />
       <Input />
     </div>
   );

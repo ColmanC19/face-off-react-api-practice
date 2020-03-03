@@ -9,16 +9,12 @@ function Input() {
   function onSubmit(e) {
     e.preventDefault()
     changeVisibility('notVisibile')
-    const endpoints = ['back', 'bday', 'family', 'holygrail', 'donut', 'cocksplat', 'fts', 'ing', 'keep', 'king', 'look', 'linus', 'madison', 'nugget', 'off']
-      fetch(`http://foaas.com/${endpoints[[Math.floor(Math.random() * endpoints.length)]]}/${_name.value}/Someone`, {
-        headers: {
-          Accept: 'application/json'
-        }
-      })
+
+      fetch(`https://programming-quotes-api.herokuapp.com/quotes/random`)
       .then(res => res.json())
       .then(
         (result) => {
-          changeMessage(result.message)
+          changeMessage(result.en)
           changePicture('https://thiscatdoesnotexist.com/')
         },
         // Note: it's important to handle errors here

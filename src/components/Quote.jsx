@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class QuoteList extends React.Component {
+class Quote extends React.Component {
 
   constructor(props){
     super(props);
@@ -13,18 +13,13 @@ class QuoteList extends React.Component {
   }
 
   componentDidMount() {
-    const endpoints = ['flying', 'no', 'because', 'asshole', 'bag', 'bye', 'bucket', 'cup', 'diabetes', 'everything', 'family', 'fascinating', 'ftfy', 'fyyff', 'give', 'jinglebells', 'programmer']
-      fetch(`http://foaas.com/${endpoints[[Math.floor(Math.random() * endpoints.length)]]}/Someone`, {
-        headers: {
-          Accept: 'application/json'
-        }
-      })
+      fetch('http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json')
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            quote: result.message
+            quote: result.quoteText
           });
         },
         // Note: it's important to handle errors here
@@ -56,4 +51,4 @@ class QuoteList extends React.Component {
    }
  }
 
-  export default QuoteList;
+  export default Quote;

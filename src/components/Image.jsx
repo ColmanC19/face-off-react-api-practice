@@ -2,7 +2,7 @@ import React from 'react';
 import Profile from '../components/Profile'
 
 
-function ImageList() {
+function Image() {
   return (
     <div>
     <img src='https://thispersondoesnotexist.com/image'/>
@@ -11,4 +11,4 @@ function ImageList() {
   );
 }
 
-export default ImageList;
+export default Image;
