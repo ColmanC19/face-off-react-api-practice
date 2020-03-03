@@ -36,6 +36,10 @@ class Quote extends React.Component {
   }
     render(){
 
+    const quoteStyle ={
+      textShadow: '2px 2px blue'
+    }
+
       const { error, isLoaded, items } = this.state;
      if (error) {
        return <div>Error: {error.message}</div>;
@@ -44,7 +48,7 @@ class Quote extends React.Component {
      } else {
        return (
          <ul>
-          <h1> {this.state.quote} </h1>
+          <h1 style={quoteStyle}> {this.state.quote} </h1>
          </ul>
        );
      }

@@ -12,9 +12,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-      fetch('https://randomuser.me/api'
-
-  )
+      fetch('https://randomuser.me/api')
       .then(res => res.json())
       .then(
         (result) => {
@@ -36,10 +34,12 @@ class Profile extends React.Component {
       )
   }
   render() {
-
+    const quoteStyle = {
+      textAlign: 'center'
+    }
   return (
     <div>
-    <h1> {this.state.profile} says: </h1>
+    <h1 style={quoteStyle}> {this.state.profile} says: </h1>
     </div>
   );
 }

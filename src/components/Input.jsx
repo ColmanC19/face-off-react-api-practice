@@ -5,6 +5,7 @@ function Input() {
   const [message, changeMessage] = useState('')
   const [picture, changePicture] = useState('')
   const [visibility, changeVisibility] = useState('visible')
+  const [catName, changeCatName] = useState('')
   let _name = null
   function onSubmit(e) {
     e.preventDefault()
@@ -29,8 +30,24 @@ function Input() {
         }
       )
 
+      fetch('https://randomuser.me/api')
+      .then(res => res.json())
+      .then(
+        (result) => {
+          changeCatName(`The wise cat ${result.results[0].name.first} says:`)
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+      )
+
   }
 
+const catImg = {
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  display: 'block'
+}
 
   return (
     <div>
@@ -48,7 +65,8 @@ function Input() {
 
         }
         `}</style>
-      <img src={picture}/>
+      <img style={catImg}src={picture}/>
+      <h1> {catName} </h1>
       <h1> {message} </h1>
     </div>
   );
